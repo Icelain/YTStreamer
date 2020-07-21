@@ -1,7 +1,7 @@
 import subprocess
 import pyautogui
 import pyperclip
-
+#lib where i keep my shortcut functions
 def cls():
     subprocess.call("clear")
 
