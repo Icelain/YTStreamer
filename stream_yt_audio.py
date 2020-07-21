@@ -5,7 +5,7 @@ import shc
 import json
 from youtube_api import YoutubeDataApi
 
-API_KEY="AIzaSyA_qsbJMvLaklHfbLKMq4zaoVE-7UTTqcM"
+FREE_API_KEY="AIzaSyA_qsbJMvLaklHfbLKMq4zaoVE-7UTTqcM"
 
 def getMaxResults():
     with open("msrs.json","r") as fileObj:
@@ -17,7 +17,7 @@ def makeStreamable(string):
 def getResults(query):
     streamableLinks=[]
 
-    yt=YoutubeDataApi(API_KEY)
+    yt=YoutubeDataApi(FREE_API_KEY)
     searches=yt.search(q=query,max_results=getMaxResults())
 
     for i in searches:
