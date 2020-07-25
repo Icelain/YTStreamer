@@ -6,15 +6,13 @@ from youtube_api import YoutubeDataApi
 from pyfiglet import Figlet
 import subprocess,sys,os
 from yt_audio_streamer.checks import checkForVlc
+from shc import listToString
 
 FREE_API_KEY="AIzaSyA_qsbJMvLaklHfbLKMq4zaoVE-7UTTqcM"
 
 
 def makeStreamable(string):
     return "https://www.youtube.com/watch?v=" + string
-
-def listToString(lst):
-    return "".join(lst)
 
 def getResults(query):
     streamableLinks=[]
