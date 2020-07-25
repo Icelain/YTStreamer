@@ -2,3 +2,4 @@ pafy
 youtube-dl
 python-vlc
 youtube-data-api
+pyfiglet
