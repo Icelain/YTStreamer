@@ -40,7 +40,7 @@ def timeToInt(tstr):
     hourSubcomponents=3600 * int(listToString(del0(hourSubcomponents)))
     minSubcomponents=60 * int(listToString(del0(minSubcomponents)))
     secComponents=int(listToString(del0(secComponents)))
-    return hourSubcomponents+minSubcomponents+secComponents+2
+    return hourSubcomponents+minSubcomponents+secComponents+3
 
 def runAllchecks():
     if not checkForVlc():
