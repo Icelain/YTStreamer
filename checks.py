@@ -1,5 +1,5 @@
 import subprocess,sys,os
-
+#checkForVlc not tested on win32 and darwin
 def checkForVlc():
     returnvar=False
 
