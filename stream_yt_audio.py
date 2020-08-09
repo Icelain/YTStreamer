@@ -79,3 +79,6 @@ def main():
             break
         res_counter+=1
     print(colorama.Fore.RED+"\nQueue finished")
+    
+'''if __name__=="__main__":
+    main()'''
