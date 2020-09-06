@@ -18,6 +18,14 @@ def play():
     playsound(glurl)
 '''Multiprocessed play function end'''
 
+def checkForGi():
+    if sys.platform=="linux":
+        try:
+            import gi
+        except:
+            print(colorama.Fore.RED+"Please install gstreamer bindings for python on linux to run ytstreamer"+colorama.Style.RESET_ALL)
+            quit()
+
 
 def makeStreamable(string):
     return "https://www.youtube.com/watch?v=" + string
@@ -58,6 +66,7 @@ def timeToInt(tstr):
 def runmain():
     global glurl
     colorama.init()
+    checkForGi()
     cs_fig=Figlet(font="jazmine")
     print(colorama.Fore.LIGHTGREEN_EX,cs_fig.renderText("Yt_Streamer"),colorama.Style.RESET_ALL)
     try:
