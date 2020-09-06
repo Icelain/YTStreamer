@@ -7,7 +7,7 @@ from pyfiglet import Figlet
 import subprocess,sys,os
 import multiprocessing
 import argparse
-__version__="1.0.7"
+__version__="1.1.0"
 glurl=""
 
 FREE_API_KEY="AIzaSyA_qsbJMvLaklHfbLKMq4zaoVE-7UTTqcM"
@@ -21,7 +21,7 @@ def play():
 def checkForGi():
     if sys.platform=="linux":
         try:
-            import gi
+            from gi import require_version
         except:
             print(colorama.Fore.RED+"Please install gstreamer bindings for python on linux to run ytstreamer"+colorama.Style.RESET_ALL)
             quit()
@@ -96,17 +96,16 @@ def runmain():
             break
 
 
-        if args.lower()=="quit":
+        if args.lower()=="quit" or args.lower()=="q":
             process.terminate()
             print(colorama.Fore.RED+"\nStream Stopped"+colorama.Style.RESET_ALL)
             break
 
-        if args.lower()=="next":
+        if args.lower()=="next" or args.lower()=="n":
             process.terminate()
+            res_counter+=1
             continue
 
-
-        res_counter+=1
     print(colorama.Fore.RED+"\nQueue finished")
     print("Exited")
 
