@@ -1,6 +1,6 @@
 pafy
 youtube-dl
-pysound
+playsound
 youtube-data-api
 pyfiglet
 colorama
