@@ -1,4 +1,4 @@
-# YT_AudioStream
+# YT_Streamer
 ```diff
 + This is a simple script that can stream audio from youtube based on search results you give.
 @@ EDIT: You can now install this via pip @@
