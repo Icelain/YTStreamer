@@ -8,5 +8,5 @@ Works on linux.
 Not tested on Windows and Mac.
 
 
-```pip install ytstreamer```
+```pip3 install ytstreamer```
 
