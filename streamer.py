@@ -4,7 +4,7 @@ import json
 from playsound import playsound
 from youtube_api import YoutubeDataApi
 from pyfiglet import Figlet
-import subprocess,sys,os
+import sys,os
 import multiprocessing
 import argparse
 __version__="1.1.0"
@@ -82,7 +82,7 @@ def runmain():
         bestaudio=video.getbestaudio()
         url=bestaudio.url
         glurl=url
-        xz=timeToInt(video.duration)
+        #xz=timeToInt(video.duration) not being used currently but is required for later versions where I'll be using a custom gst player instead of playsound
         print(colorama.Fore.GREEN,f"Now playing[{res_counter}]: [{video.title}][{video.duration}][@{bestaudio.quality}]",colorama.Style.RESET_ALL)
 
 
