@@ -98,7 +98,7 @@ def runmain():
         
         #xz=timeToInt(video.duration) not being used currently but is required for later versions where I'll be using a custom gst player instead of playsound
         
-        print(colorama.Fore.GREEN,f"Now playing[{res_counter}]: [{video.title}][{video.duration}][@{bestaudio.quality}]",colorama.Style.RESET_ALL)
+        print(colorama.Fore.LIGHTMAGENTA_EX,f"Now playing[{res_counter}]: [{video.title}][{video.duration}][@{bestaudio.quality}]",colorama.Style.RESET_ALL)
 
 
         process=multiprocessing.Process(target=play)
