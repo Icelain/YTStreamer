@@ -1,13 +1,14 @@
-import pafy
+#usr/bin/python3
+
+
 import colorama,time
 import json
 from playsound import playsound
-from youtube_api import YoutubeDataApi
 from pyfiglet import Figlet
 import sys,os
 import multiprocessing
 import argparse
-__version__="1.1.0"
+__version__="1.1.4"
 
 glurl=""
 
@@ -21,13 +22,13 @@ def play():
 
 def checkForGi():
     if sys.platform=="linux":
-       
-        try:
-            from gi import require_version
-        
-        except:
-            print(colorama.Fore.RED+"Please install gstreamer bindings for python on linux to run ytstreamer"+colorama.Style.RESET_ALL)
-            quit()
+
+    try:
+        from gi import require_version
+
+    except:
+        print(colorama.Fore.RED+"Please install gstreamer bindings for python on linux to run ytstreamer"+colorama.Style.RESET_ALL)
+        quit()
 
 
 def makeStreamable(string):
@@ -38,6 +39,8 @@ def listToString(lst):
 
 def getResults(query):
     streamableLinks=[]
+
+    from youtube_api import YoutubeDataApi
 
     yt=YoutubeDataApi(FREE_API_KEY)
     searches=yt.search(q=query,max_results=10)
@@ -69,6 +72,7 @@ def timeToInt(tstr):
 
 
 def runmain():
+    import pafy
     global glurl
     
     colorama.init()
@@ -122,13 +126,13 @@ def runmain():
             res_counter+=1
             continue
         if args.lower()=="restart" or args.lower()=="r":
-        	process.terminate()
-        	res_counter=1
-        	continue    
+            process.terminate()
+            res_counter=1
+            continue    
         if args.lower=="previous" or args.lower()=="p":
-        	process.terminate()
-        	res_counter-=1
-        	continue	
+            process.terminate()
+            res_counter-=1
+            continue    
 
     print(colorama.Fore.RED+"\nQueue finished")
     print("Exited")
@@ -145,7 +149,7 @@ def main():
         print(__version__)
 
     elif recv_args.hbool:
-    	print("Help:\n\n-v or --version- Displays version\n-h or --help - Displays Help\n\nPlayer commands-\n\n1. n or next to get to the next stream\n2. q or quit to quit the script.(Ctrl-C also works)\n3. r or restart to restart the queue\n4. p or previous to go back to previous stream. ")    
+        print("Help:\n\n-v or --version- Displays version\n-h or --help - Displays Help\n\nPlayer commands-\n\n1. n or next to get to the next stream\n2. q or quit to quit the script.(Ctrl-C also works)\n3. r or restart to restart the queue\n4. p or previous to go back to previous stream. ")    
     
     else:
         runmain()
