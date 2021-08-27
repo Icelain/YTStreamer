@@ -5,7 +5,7 @@
 Requires gstreamer and python3-gst-1.0
 ```
 Works on linux.
-You might be able to get it working on mac.
+You might be able to get it working on macos.
 
 This depends on gstreamer so you're out of luck if you use windows.
 
