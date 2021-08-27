@@ -55,7 +55,7 @@ def del0(lst):
         del lst[0]
     return lst
 
-
+'''
 def timeToInt(tstr):
     components=tstr.split(":")
 
@@ -68,7 +68,7 @@ def timeToInt(tstr):
     secComponents=int(listToString(del0(secComponents)))
 
     return hourSubcomponents+minSubcomponents+secComponents+2
-
+'''
 
 
 def runmain():
